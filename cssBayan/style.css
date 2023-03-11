@@ -1,1 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.acor-container {
+    max-width: 400px;
+    margin: 25px auto 0;
+}
+.acor-title {
+    margin: 0;
+    padding-bottom: 15px;
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: 700;
+    border-bottom: 1px solid #cccccc;
+}
+.acor-items {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.acor-item {
+    cursor: pointer;
+}
+.acor-item:not(:last-child) {
+    border-bottom: 1px solid #cccccc;
+}
+.acor-item input{
+    display: none;
+}
+.acor-item label {
+    display: block;
+    padding: 10px 0;
+    font-family: 'Roboto';
+    font-size: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.acor-item label:active {
+    color: #2F2FA2;
+}
+.acor-item .acor-body {
+    max-height: 0;
+    overflow: hidden;
+}
+.acor-item input:checked + label + .acor-body {
+    max-height: 400px;
+    transition: max-height .3s;
+}
+.acor-item .acor-body img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+@media (hover: hover) {
+    .acor-items:hover .acor-item input:not(:checked) + label {
+        color: #2F2FA2;
+    }
+    .acor-items:hover .acor-item label:before {
+        content: '\276F';
+        float: right;
+    }
+    .acor-items:hover .acor-item input:checked + label:before {
+        transition: transform .3s;
+        transform: rotate(90deg);
+    }
+    .acor-item:hover input + label + .acor-body {
+        max-height: 400px;
+        transition: max-height .3s;
+    }
+}
+@media not (hover: hover) {
+    .acor-items:hover .acor-item input + label {
+        color: #111111;
+    }
+    .acor-item label:before {
+        content: '\276F';
+        float: right;
+    }
+    .acor-item input:checked + label:before {
+        transition: transform .3s;
+        transform: rotate(90deg);
+    }
+}
+@media (max-width: 1024px) {
+    .acor-title {
+        font-size: 35px;
+    }
+    .acor-item label {
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .acor-title {
+        font-size: 30px;
+    }
+    .acor-item label {
+        font-size: 14px;
+    }
+}
 
